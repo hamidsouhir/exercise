@@ -1,0 +1,146 @@
+ALGORITHM three_nb_algo
+VAR
+    num1,num2,num3 : INTEGER;
+    sum :INTEGER := 0 ;
+BEGIN
+    Read (num1)
+    Read(num2)
+    Read(num3)
+    sum := num1 + num2 + num3 ; 
+    write(sum)
+    END
+
+    ALGORITHM count_sentence
+    VAR
+         str : string;
+        words_count : integer := 1;
+        i : integer := 0;
+        vowels_count : integer := 0;
+
+    BEGIN
+        write ("enter a sentence")
+        Read (sentence)
+        str[i] := 0 ;
+        words_count := 1
+       FOR i FROM 0 TO str_length-1 STEP 1  DO
+           IF (str[i]:=(' ')) THEN
+               words_count = words_count + 1 ;
+               
+           END_IF
+           print ("Number of words is", words_count)
+         
+           print("Number of Characters is" , str.length)
+           str:= ToLower(str)
+           
+           IF (str[i]= a or str[i] = i or str[i]= e or str[i]= u or str[i]= o) THEN
+               vowels_count := vowels_count+1
+           END_IF
+           print("number of vowels is" , vowels_count)
+       END_FOR
+
+
+    END
+   
+
+
+
+
+ALGORITHM sum_elements1
+VAR
+    set1 , set2 : array of integer;
+    i: integer := 0
+    j: interger :=0
+    sum : integer := 0
+BEGIN
+    write(" inter set1 ")
+    write( "inter set2 ")
+    FOR i FROM 0 TO set1.length-1 STEP 1  DO
+        FOR j FROM 0 TO set2.length-1 STEP 1  DO
+        IF (set[i]<> set2[j]) THEN 
+            sum := sum + set1[i]
+        END_IF
+        END_FOR
+    END_FOR
+    FOR j FROM 0 TO set2.length-1 STEP 1  DO
+        FOR i FROM 0 TO set1.length STEP 1  DO
+            IF (set[j]<>set[i]) THEN
+                sum :=sum + set2[i]
+            END_IF
+        END_FOR
+    END_FOR
+    write(sum)
+END
+
+ALGORITHM sum_elements2
+VAR
+    set1 , set2: array of interger
+    i , j : integer 
+    sum : integer := 0
+BEGIN
+    FOR i FROM 0 TO set1.lenght STEP 1  DO
+        FOR j FROM 0 TO set2.lenght STEP 1  DO
+        IF (set1[i] = set[j]) THEN
+            sum = sum + set1[i] + set2[j]
+        END_IF
+           
+        END_FOR
+    END_FOR
+    write(sum)
+END
+
+
+
+PROCEDURE dot_product(v1 , v2 :array of integer , ps : integer)
+VAR
+    v1.lenght : integer
+    v2.lenght : integer
+    i : intergerps = 0
+BEGIN
+    IF (v1.lenght <> v2.lenght) THEN
+        write( "the 2 vectors have defferent lenght")
+        ps := nan
+    END_IF
+    FOR i FROM 0 TO v1.lenght STEP 1  DO
+        ps := ps + v1[i]*v2[i]
+    END_FOR
+END
+
+ALGORITHM ortho_vect
+VAR
+    v: array of array
+    i ,j :integer
+BEGIN
+    FOR i FROM 0 TO v.lenght-1 STEP 1  DO
+        FOR j FROM i+1 TO v.lenght-1 STEP 1  DO
+            dot_product(v1,v2 ,ps)
+            IF (ps = 0) THEN
+                write (v1[i], "and" , v2[j] , "are orthogonal")
+            END_IF
+        END_FOR
+    END_FOR
+END
+
+
+SORTING AND SEARCHING CHECKPOINT 
+PROCEDURE permut(VAR x,VAR y)
+VAR
+    temp:INTEGER;
+BEGIN
+    temp:=x;
+    x:=y;
+    y:=temp;
+END
+
+ALGORITHM sort
+VAR
+    arr : ARRAY_OF INTEGER[100];
+    i,j:INTEGER
+BEGIN
+    FOR i FROM 0 TO arr.length-1 STEP 1  DO
+        j:=i
+        WHILE (j>0 AND arr[j]<arr[j-1]) DO
+        permut(arr[j-1],arr[j])
+        j:=j-1
+        END_WHILE
+    END_FOR
+END
